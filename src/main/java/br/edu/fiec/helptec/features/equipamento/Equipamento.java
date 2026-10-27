@@ -1,20 +1,22 @@
 package br.edu.fiec.helptec.features.equipamento;
 
 
+import br.edu.fiec.helptec.features.commons.AuditBaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import jakarta.persistence.Id;
-@Entity
-@Table(name = "tb_equipamento")
+
 @Data
+@EqualsAndHashCode(callSuper = false)
+@Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Equipamento {
+@Table(name = "tb_equipamento")
+public class Equipamento extends AuditBaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

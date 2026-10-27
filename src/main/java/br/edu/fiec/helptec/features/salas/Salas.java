@@ -1,17 +1,18 @@
 package br.edu.fiec.helptec.features.salas;
 
+import br.edu.fiec.helptec.features.commons.AuditBaseEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
-@Entity
-@Table(name = "tb_salas")
 @Data
+@EqualsAndHashCode(callSuper = false)
+@Builder
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Salas {
+@Table(name = "tb_salas")
+public class Salas extends AuditBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
